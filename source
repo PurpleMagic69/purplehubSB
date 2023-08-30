@@ -5,6 +5,12 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Purple Hub (SB)", HidePremium = false, SaveConfig = true, ConfigFolder = "Purplesbhub"})
 local hitallcheck = false
 
+local function selectPlayer()
+    players = game.Players:GetPlayers()
+    selected = players[math.random(1,#players)]
+    return selected
+end
+
 local EpicTab = Window:MakeTab({
 	Name = "Epik stuff",
 	Icon = "rbxassetid://12484358196",
@@ -72,6 +78,17 @@ game:GetService("ReplicatedStorage").ReverseAbility:FireServer()
 wait(6)
         end    
 	end    
+})
+
+Tab:AddButton({
+	Name = "Slap Random Player (use bull)",
+	Callback = function()
+      		randomPlayer = selectPlayer()
+if randomPlayer and randomPlayer.Character then
+    game.ReplicatedStorage.BullHit:FireServer(randomPlayer.Character:WaitForChild("Head"))
+end
+end
+  	end    
 })
 
 
