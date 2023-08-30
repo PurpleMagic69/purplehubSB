@@ -16,9 +16,11 @@ EpicTab:AddButton({
         local anim = game:GetService("ReplicatedStorage"):WaitForChild("Assets").Rojo:FindFirstChild("Animation")
         local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
         track:Play()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
         wait(4)
         track:AdjustSpeed(0)
         wait(1.9)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
         local anim2 = game:GetService("ReplicatedStorage"):WaitForChild("Assets").Rojo:FindFirstChild("AnimationRecoil")
         local track2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim2)
         track:Stop()
