@@ -116,7 +116,9 @@ wait(6)
         end
 
         if nearestEnemy then
-            root.CFrame = nearestEnemy.CFrame * CFrame.new(0, 0, 3) -- make the root be 3 units behind the enemy's root, or in front of it in this case due to the fact the root(as a part)'s direction is opposite of the player's direction(as a guy)
+            root.CFrame = nearestEnemy.CFrame * CFrame.new(0, 0, 3)
+            wait(0.6)
+            game.ReplicatedStorage.Events.Slap:FireServer(nearestEnemy.Parent:WaitForChild("Head"))
         end
    end
    })
