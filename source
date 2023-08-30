@@ -108,7 +108,7 @@ end
                 })
 
 RoyaleTab:AddButton({
-	Name = "Death counter (teleport behind closest player)",
+	Name = "Death counter",
 	Callback = function()
       		print("SUDDEN DEATH.")
                 local deathanim = Instance.new("Animation")
@@ -125,9 +125,7 @@ RoyaleTab:AddButton({
                     if not Closest or Distance < Closest then Closest = Distance end
                 end
                 return Closest
-                PlayerRoot.CFrame = OpponentRoot.CFrame * CFrame.new(0, 0, 3)
-                
-  	end    
+                PlayerRoot.CFrame = OpponentRoot.CFrame * CFrame.new(0, 0, 3)      
 end
 })
 
