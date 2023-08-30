@@ -61,10 +61,10 @@ end
 })
 
 EpicTab:AddButton({
-	Name = "Slap EVERYONE!! (usually kicks, use bull)",
+	Name = "Slap EVERYONE!! (doesn't work)",
 	Callback = function()
            for _,player in ipairs(game.Players:GetPlayers()) do
-if player.Character:FindFirstChild("isInArena") == true and player.Character:FindFirstChild("HumanoidRootPart") and player ~= game.Players.LocalPlayer then
+if player.Character:FindFirstChild("isInArena") == true and player.Character:FindFirstChild("HumanoidRootPart") then
     local character = player.Character
       game.ReplicatedStorage.BullHit:FireServer(character:WaitForChild("Head"))
 end
@@ -74,12 +74,30 @@ end
 
 EpicTab:AddToggle({
 	Name = "Infinite Reverse",
-	InfRValue = false,
 	Callback = function(Value)
 	InfReverse = Value
 while InfReverse do
 game:GetService("ReplicatedStorage").ReverseAbility:FireServer()
 wait(6)
+        end    
+	end    
+})
+
+EpicTab:AddToggle({
+	Name = "Super epic slap aura!!",
+	Callback = function(Value)
+	SlapAura = Value
+while SlapAura do
+for i,v in pairs(game.Players:GetChildren()) do
+                    if v ~= game.Players.LocalPlayer and v.Character then
+if v.Character:FindFirstChild("Dead") == nil and v.Character:FindFirstChild("HumanoidRootPart") then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if 100 >= Magnitude then
+game.ReplicatedStorage.Events.Slap:FireServer(v.Character:WaitForChild("Head"))
+                    end
+end
+end
+end
         end    
 	end    
 })
