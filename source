@@ -60,17 +60,6 @@ EpicTab:AddButton({
 end    
 })
 
-EpicTab:AddButton({
-	Name = "Slap Random Player (use bull)",
-	Callback = function()
-      game.ReplicatedStorage.BullHit:FireServer(character:WaitForChild("Head"))
-      players = game.Players:GetPlayers()
-    selected = players[math.random(1,#players)]
-    return selected
-    game.ReplicatedStorage.BullHit:FireServer(selected.Character:WaitForChild("Head"))
-end
-end    
-})
 
 EpicTab:AddToggle({
 	Name = "Infinite Reverse",
