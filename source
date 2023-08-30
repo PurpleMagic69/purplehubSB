@@ -64,7 +64,7 @@ EpicTab:AddButton({
 	Name = "Slap EVERYONE!! (usually kicks, use bull)",
 	Callback = function()
            for _,player in ipairs(game.Players:GetPlayers()) do
-if player.Character:FindFirstChild("Dead") == nil and player.Character:FindFirstChild("HumanoidRootPart") then
+if player.Character:FindFirstChild("entered") and player.Character:FindFirstChild("HumanoidRootPart") then
     local character = player.Character
       game.ReplicatedStorage.BullHit:FireServer(character:WaitForChild("Head"))
 end
