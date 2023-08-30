@@ -108,7 +108,7 @@ wait(6)
             if plrRoot and plrRoot ~= root then
                 local mag = (plrRoot.Position - root.Position).Magnitude
 
-                if mag < 10 and mag < nearestRoot then
+                if mag < 25 and mag < nearestRoot then
                     nearestEnemy = plrRoot
                     nearestRoot = mag
                 end
