@@ -94,12 +94,11 @@ wait(6)
           Callback = function()
                        print("SUDDEN DEATH.")
                    local deathanim = Instance.new("Animation")
-                   anim.AnimationId = "rbxassetid://7335958156" 
+                   deathanim.AnimationId = "rbxassetid://7335958156" 
                    local deathtrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(deathanim)
                    deathtrack:Play()
                    deathtrack:AdjustSpeed(2)
    end
-   task.wait()
    })
 
 RoyaleTab:AddToggle({
