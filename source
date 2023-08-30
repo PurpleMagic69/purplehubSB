@@ -71,9 +71,10 @@ EpicTab:AddToggle({
 	Name = "Infinite Reverse",
 	InfRValue = false,
 	Callback = function(Value)
-		while InfReverse do
-            game:GetService("ReplicatedStorage").ReverseAbility:FireServer()
-            wait(6)
+	InfReverse = Value
+while InfReverse do
+game:GetService("ReplicatedStorage").ReverseAbility:FireServer()
+wait(6)
         end    
 	end    
 })
