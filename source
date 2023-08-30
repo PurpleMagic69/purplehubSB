@@ -87,7 +87,6 @@ Tab:AddButton({
 if randomPlayer and randomPlayer.Character then
     game.ReplicatedStorage.BullHit:FireServer(randomPlayer.Character:WaitForChild("Head"))
 end
-end
   	end    
 })
 
