@@ -1,0 +1,81 @@
+if game.PlaceId == 6403373529 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Purple Hub (SB)", HidePremium = false, SaveConfig = true, ConfigFolder = "Purplesbhub"})
+local hitallcheck = false
+
+local EpicTab = Window:MakeTab({
+	Name = "Epik stuff",
+	Icon = "rbxassetid://12484358196",
+	PremiumOnly = false
+})
+
+EpicTab:AddButton({
+	Name = "Use Real ROJO ABILITY (ALL GLOVES)",
+	Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Charge", {game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+        local anim = game:GetService("ReplicatedStorage"):WaitForChild("Assets").Rojo:FindFirstChild("Animation")
+        local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+        track:Play()
+        wait(4)
+        track:AdjustSpeed(0)
+        wait(1.9)
+        local anim2 = game:GetService("ReplicatedStorage"):WaitForChild("Assets").Rojo:FindFirstChild("AnimationRecoil")
+        local track2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim2)
+        track:Stop()
+        track2:Play()
+        game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+  	end    
+})
+
+EpicTab:AddButton({
+	Name = "EPIK ROLL OR BACKFLIP!!",
+	Callback = function()
+        local anim = game:GetService("ReplicatedStorage"):WaitForChild("Assets").Retro:FindFirstChild("Animations").Bomb
+        local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+        track:Play()
+        track:AdjustSpeed(0.7)
+        wait(0.5)
+        local bv = Instance.new("BodyVelocity")
+        bv.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * 50
+        bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+        bv.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+        wait(0.5)
+        bv:Destroy()
+  	end    
+})
+
+EpicTab:AddButton({
+	Name = "Spawn Nimbus Cloud",
+	Callback = function()
+       game:GetService("ReplicatedStorage"):FindFirstChild("NimbusAbility"):FireServer()
+end    
+})
+
+EpicTab:AddButton({
+	Name = "Build a great wall (FORT, WORKS IN LOBBY, DONT SPAM)",
+	Callback = function()
+       game:GetService("ReplicatedStorage"):FindFirstChild("Fortlol"):FireServer()
+end    
+})
+
+EpicTab:AddButton({
+	Name = "Slap EVERYONE!! (doesn't work rn)",
+	Callback = function()
+
+end    
+})
+
+EpicTab:AddToggle({
+	Name = "Infinite Reverse",
+	InfRValue = false,
+	Callback = function(Value)
+		while InfReverse do
+            game:GetService("ReplicatedStorage").ReverseAbility:FireServer()
+            wait(6)
+        end    
+	end    
+})
+
+
+end
+OrionLib:Init()
