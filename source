@@ -117,7 +117,7 @@ wait(6)
 
         if nearestEnemy then
             root.CFrame = nearestEnemy.CFrame * CFrame.new(0, 0, 3)
-            wait(0.6)
+            wait(1.4)
            for i,v in pairs(game.Players:GetChildren()) do
                     if v ~= game.Players.LocalPlayer and v.Character then
 if v.Character:FindFirstChild("Dead") == nil and v.Character:FindFirstChild("HumanoidRootPart") then
