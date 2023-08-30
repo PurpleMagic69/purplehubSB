@@ -61,9 +61,12 @@ end
 })
 
 EpicTab:AddButton({
-	Name = "Slap EVERYONE!! (doesn't work rn)",
+	Name = "Slap EVERYONE!! (usually kicks, use bull)",
 	Callback = function()
-
+           for _,player in ipairs(game.Players:GetPlayers()) do
+    local character = player.Character
+      game.ReplicatedStorage.BullHit:FireServer(character:WaitForChild("Head"))
+end
 end    
 })
 
