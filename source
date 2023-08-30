@@ -61,14 +61,13 @@ end
 })
 
 EpicTab:AddButton({
-	Name = "Slap EVERYONE!! (doesn't work)",
+	Name = "Slap Random Player (use bull)",
 	Callback = function()
-           for _,player in ipairs(game.Players:GetPlayers()) do
-if player.Character:FindFirstChild("isInArena") == true and player.Character:FindFirstChild("HumanoidRootPart") then
-    local character = player.Character
       game.ReplicatedStorage.BullHit:FireServer(character:WaitForChild("Head"))
-end
-end
+      players = game.Players:GetPlayers()
+    selected = players[math.random(1,#players)]
+    return selected
+    game.ReplicatedStorage.BullHit:FireServer(selected.Character:WaitForChild("Head"))
 end    
 })
 
