@@ -92,7 +92,7 @@ for i,v in pairs(game.Players:GetChildren()) do
                     if v ~= game.Players.LocalPlayer and v.Character then
 if v.Character:FindFirstChild("Dead") == nil and v.Character:FindFirstChild("HumanoidRootPart") then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
-                        if 100 >= Magnitude then
+                        if 300 >= Magnitude then
 game.ReplicatedStorage.Events.Slap:FireServer(v.Character:WaitForChild("Head"))
 end
 end
