@@ -110,27 +110,4 @@ end
 end
                 })
 
-RoyaleTab:AddButton({
-	Name = "Death counter",
-	Callback = function()
-      		print("SUDDEN DEATH.")
-                local deathanim = Instance.new("Animation")
-                anim.AnimationId = "rbxassetid://7335958156" 
-                local deathtrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(deathanim)
-                deathtrack:Play()
-                deathtrack:AdjustSpeed(2)
-                local Closest = nil
-                for  _, Opponent in pairs (game.Players:GetDescendants()) do
-                    local OpponentRoot = Opponent:FindFirstChild("HumanoidRootPart")
-                    local PlayerRoot = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-                    local Distance = (OpponentRoot.Position - PlayerRoot.Position).Magnitude
-              
-                    if not Closest or Distance < Closest then Closest = Distance end
-                end
-                return Closest
-                PlayerRoot.CFrame = OpponentRoot.CFrame * CFrame.new(0, 0, 3) 
-end
-task.wait()
-})
-
 OrionLib:Init()
