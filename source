@@ -80,7 +80,7 @@ wait(6)
 	end    
 })
 
-Tab:AddButton({
+EpicTab:AddButton({
 	Name = "Slap Random Player (use bull)",
 	Callback = function()
       		randomPlayer = selectPlayer()
