@@ -83,10 +83,6 @@ wait(6)
 EpicTab:AddButton({
 	Name = "Slap Random Player (use bull)",
 	Callback = function()
-      		randomPlayer = selectPlayer()
-if randomPlayer and randomPlayer.Character then
-    game.ReplicatedStorage.BullHit:FireServer(randomPlayer.Character:WaitForChild("Head"))
-end
   	end    
 })
 
