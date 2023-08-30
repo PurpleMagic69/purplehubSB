@@ -125,8 +125,9 @@ RoyaleTab:AddButton({
                     if not Closest or Distance < Closest then Closest = Distance end
                 end
                 return Closest
-                PlayerRoot.CFrame = OpponentRoot.CFrame * CFrame.new(0, 0, 3)      
+                PlayerRoot.CFrame = OpponentRoot.CFrame * CFrame.new(0, 0, 3) 
 end
+task.wait()
 })
 
 end
