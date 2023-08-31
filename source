@@ -139,6 +139,8 @@ if not game:IsLoaded() then
                     for _,v in ipairs(game.Workspace:GetChildren()) do
                      if v:IsA("Tool") then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                        task.wait()
+                        game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
                      end
                   end
   	end    
