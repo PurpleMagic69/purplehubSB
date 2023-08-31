@@ -200,6 +200,7 @@ if not game:IsLoaded() then
 	Callback = function()
       		print("auto win beta")
               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(9999999,9999999,9999999)
+              game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
   	end    
 })
    
