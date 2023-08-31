@@ -163,13 +163,39 @@ if not game:IsLoaded() then
 	Callback = function()
       		print("using")
               for _,v in ipairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                     if v:IsA("Tool") and table.find(PermItems, v) then
+                     if v:IsA("Tool") and table.find(PermItems, v.Name) then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
                         task.wait()
                         v:Activate()
                      end
                   end
   	end    
+})
+
+   RoyaleTab:AddSlider({
+	Name = "Speed (USE ONLY IN ROYALE)",
+	Min = 0,
+	Max = 100,
+	Default = 20,
+	Color = Color3.fromRGB(255,85,0),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+   RoyaleTab:AddSlider({
+	Name = "Jump Power (use only in royale i think)",
+	Min = 0,
+	Max = 500,
+	Default = 100,
+	Color = Color3.fromRGB(0,153,255),
+	Increment = 1,
+	ValueName = "jump",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
 })
 
 
@@ -195,6 +221,14 @@ if not game:IsLoaded() then
    end
    end
                    })
+
+   RoyaleTab:AddButton({
+	Name = "Auto win (BETA)",
+	Callback = function()
+      		print("auto win beta")
+              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(9999999,9999999,9999999)
+  	end    
+})
    
    OrionLib:Init()
    
