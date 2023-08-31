@@ -213,6 +213,23 @@ if not game:IsLoaded() then
               end
   	end    
 })
+
+RoyaleTab:AddToggle({
+	Name = "No glove swing cooldown",
+	Default = false,
+	Callback = function(Value)
+	     GloveSwingCD = Value
+            if GloveSwingCD == false then
+              for _,part in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do 
+                     if part:IsA("Tool") then
+                            if part:FindFirstChild("Config"):FindFirstChild("AttackCD") then
+                               part.Config.AttackCD.Value = 0
+                     end
+                     end
+              end
+            end
+	end    
+})
    
    OrionLib:Init()
    
