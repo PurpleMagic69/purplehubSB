@@ -146,6 +146,15 @@ if not game:IsLoaded() then
   	end    
 })
 
+   RoyaleTab:AddButton({
+	Name = "Heal to max hp",
+	Callback = function()
+      		print("healing...")
+              game.Players.LocalPlayer.Character.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+  	end    
+})
+
+
    
    
    RoyaleTab:AddToggle({
