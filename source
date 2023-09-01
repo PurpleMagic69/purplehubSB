@@ -230,7 +230,6 @@ if not game:IsLoaded() then
                              Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                                 if 25 >= Magnitude then
                                      game.ReplicatedStorage.Events.Slap:FireServer(v.Character:WaitForChild("Head"))
-                            end
          end
         end
         end
