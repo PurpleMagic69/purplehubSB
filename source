@@ -234,6 +234,7 @@ if not game:IsLoaded() then
         end
         end
   	end    
+    end
 })
 
 
