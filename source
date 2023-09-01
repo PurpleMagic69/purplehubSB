@@ -201,42 +201,6 @@ if not game:IsLoaded() then
    end
                    })
 
-   RoyaleTab:AddButton({
-	Name = "Auto win (BETA, USE WHEN U LAND)",
-	Callback = function()
-              OrionLib:MakeNotification({
-                     Name = "Auto win",
-                     Content = "Please wait...",
-                     Image = "rbxassetid://109251560",
-                     Time = 5
-              })
-      		print("auto win beta")
-              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(9999999,9999999,9999999)
-              for _,part in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
-                     if part:IsA("BasePart") then
-                            part.Anchored = true
-                     end
-              end
-              while true do
-                     wait(1.6)
-
-                     randomPlayer = selectPlayer()
-                     if randomPlayer and randomPlayer.Character then
-                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = randomPlayer.Character.HumanoidRootPart.CFrame
-                     end
-                     for i,v in pairs(game.Players:GetChildren()) do
-                            if v ~= game.Players.LocalPlayer and v.Character then
-                        if v.Character:FindFirstChild("Dead") == nil and v.Character:FindFirstChild("HumanoidRootPart") then
-                             Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
-                                if 25 >= Magnitude then
-                                     game.ReplicatedStorage.Events.Slap:FireServer(v.Character:WaitForChild("Head"))
-         end
-        end
-        end
-  	end    
-    end
-})
-
 
    
    OrionLib:Init()
