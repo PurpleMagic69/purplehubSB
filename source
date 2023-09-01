@@ -19,6 +19,12 @@ if not game:IsLoaded() then
        "Frog Potion"
 
    }
+
+   local function selectPlayer()
+       players = game.Players:GetPlayers()
+       selected = players[math.random(1,#players)]
+       return selected
+   end
    
    local function selectPlayer()
        players = game.Players:GetPlayers()
@@ -200,7 +206,7 @@ if not game:IsLoaded() then
 	Callback = function()
               OrionLib:MakeNotification({
                      Name = "Auto win",
-                     Content = "Please wait until the match ends.",
+                     Content = "Please wait...",
                      Image = "rbxassetid://109251560",
                      Time = 5
               })
@@ -211,25 +217,28 @@ if not game:IsLoaded() then
                             part.Anchored = true
                      end
               end
+              while true do
+                     wait(1.6)
+
+                     randomPlayer = selectPlayer()
+if randomPlayer and randomPlayer.Character then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = randomPlayer.Character.HumanoidRootPart.CFrame
+end
+
+                     for i,v in pairs(game.Players:GetChildren()) do
+                            if v ~= game.Players.LocalPlayer and v.Character then
+        if v.Character:FindFirstChild("Dead") == nil and v.Character:FindFirstChild("HumanoidRootPart") then
+        Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                                if 25 >= Magnitude then
+        game.ReplicatedStorage.Events.Slap:FireServer(v.Character:WaitForChild("Head"))
+                            end
+        end
+        end
+              end
   	end    
 })
 
-RoyaleTab:AddToggle({
-	Name = "No glove swing cooldown",
-	Default = false,
-	Callback = function(Value)
-	     GloveSwingCD = Value
-            if GloveSwingCD == false then
-              for _,part in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do 
-                     if part:IsA("Tool") then
-                            if part:FindFirstChild("Config"):FindFirstChild("AttackCD") then
-                               part.Config.AttackCD.Value = 0
-                     end
-                     end
-              end
-            end
-	end    
-})
+
    
    OrionLib:Init()
    
