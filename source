@@ -19,12 +19,6 @@ if not game:IsLoaded() then
        "Frog Potion"
 
    }
-
-   local function selectPlayer()
-       players = game.Players:GetPlayers()
-       selected = players[math.random(1,#players)]
-       return selected
-   end
    
    local function selectPlayer()
        players = game.Players:GetPlayers()
