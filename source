@@ -5,7 +5,7 @@ if not game:IsLoaded() then
    end
    
    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-   local Window = OrionLib:MakeWindow({Name = "Purple Hub (SB)", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "Purplesbhub"})
+   local Window = OrionLib:MakeWindow({Name = "Purple Magic Hub (SB)", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "Purplesbhub"})
 
    local PermItems = {
 
